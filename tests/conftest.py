@@ -14,3 +14,12 @@ def dummy_cookie():
         "total": 1,
         "count_by_release": {"39": 1},
     }
+
+
+@pytest.fixture
+def dummy_cookie_v2(dummy_cookie):
+    return {
+        **dummy_cookie,
+        "sender_total": 13,
+        "sender_count_by_release": {"38": 12, "39": 1},
+    }
