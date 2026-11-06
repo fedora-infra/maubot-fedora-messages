@@ -11,6 +11,12 @@ class GiveCookieV1(MaubotFedoraMessage):
     """
     A sub-class of a Fedora message that defines a message schema for messages
     published by Maubot Fedora when a cookie is given.
+
+    ``total`` and ``count_by_release`` describe the recipient. The optional
+    ``sender_total`` and ``sender_count_by_release`` fields describe the giver,
+    so consumers can count cookies given as well as cookies received. They are
+    not required because messages published before they were added only carry
+    the recipient's totals.
     """
 
     topic = "maubot.cookie.give.v1"
@@ -26,6 +32,8 @@ class GiveCookieV1(MaubotFedoraMessage):
             "total": {"type": "number"},
             "fedora_release": {"type": "string"},
             "count_by_release": {"type": "object"},
+            "sender_total": {"type": "number"},
+            "sender_count_by_release": {"type": "object"},
         },
         "required": ["sender", "recipient", "total", "fedora_release", "count_by_release"],
     }
