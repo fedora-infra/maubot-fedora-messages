@@ -7,6 +7,7 @@ import pytest
 
 @pytest.fixture
 def dummy_cookie():
+    """A v1 message published before sender totals were added."""
     return {
         "sender": "dummy-user",
         "recipient": "foobar",
@@ -17,7 +18,8 @@ def dummy_cookie():
 
 
 @pytest.fixture
-def dummy_cookie_v2(dummy_cookie):
+def dummy_cookie_with_sender_totals(dummy_cookie):
+    """A v1 message published after sender totals were added."""
     return {
         **dummy_cookie,
         "sender_total": 13,

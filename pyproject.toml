@@ -40,7 +40,6 @@ coverage = {extras = ["toml"], version = ">=7.0.0"}
 
 [tool.poetry.plugins."fedora.messages"]
 "maubot.cookie.give.v1" = "maubot_fedora_messages.cookie:GiveCookieV1"
-"maubot.cookie.give.v2" = "maubot_fedora_messages.cookie:GiveCookieV2"
 
 [tool.black]
 line-length = 100

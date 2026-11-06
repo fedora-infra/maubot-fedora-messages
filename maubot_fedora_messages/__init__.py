@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: LGPL-3.0-or-later
 
-from .cookie import GiveCookieV1, GiveCookieV2
+from .cookie import GiveCookieV1
